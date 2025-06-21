@@ -6,7 +6,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const taskList   = document.getElementById("task-list");
     
     // Read tasks array from Local Storage (returns [] if nothing saved)
-    function loadStoredTasks() {
+    function loadTasks() {
       const saved = localStorage.getItem("tasks");
       return saved ? JSON.parse(saved) : [];
     }
@@ -40,7 +40,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   
     // ----- Render any tasks that were previously stored -----
-    const tasks = loadStoredTasks();        // our in‑memory array
+    const tasks = loadTasks();        // our in‑memory array
     tasks.forEach(task => renderTask(task, tasks));
   
     // ----- Add‑task function -----
